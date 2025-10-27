@@ -24,6 +24,12 @@ public class CustomList<T>
     {
         return array[index];
     }
+
+    public void Get(int index,T item)
+    {
+        array[index] = item;
+    }
+
     public void RemoveAt(int index)
     {
         for (int i = index; i < size - 1; i++)
@@ -63,6 +69,14 @@ public class CustomList<T>
             Console.WriteLine(array[i]);
         }
     }
+
+    public void Clear()
+    {
+        for (int i = 0; i < size; i++)
+        {
+            array[i] = default(T);
+        }
+    }
 }
 
 class Program
@@ -82,7 +96,7 @@ class Program
 
         list.RemoveAt(2);
         list.Insert(2,30);
-
+        
 
         list.PrintAll();
     }
