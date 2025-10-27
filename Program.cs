@@ -40,9 +40,9 @@ public class CustomList<T>
         {
             Resize(maxSize * 2);
         }
-        for (int i = index+1; i > size-1; i++)
+        for (int i = size; i > index; i--)
         {
-            array[i] = array[i+1];
+            array[i] = array[i-1];
         }
         array[index] = item;
         size += 1;
@@ -81,8 +81,8 @@ class Program
         Console.WriteLine("Элемент по индексу 2: " + list.Get(2));
 
         list.RemoveAt(2);
-        list.Insert(2,99);
-        Console.WriteLine("После удаления элемента по индексу 1:");
+        list.Insert(2,30);
+
 
         list.PrintAll();
     }
